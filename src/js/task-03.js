@@ -14,23 +14,16 @@ const images = [
 ];
 
 const listEl = document.querySelector(".gallery");
+
 listEl.style.listStyle = "none";
 listEl.style.display = "flex";
 listEl.style.gap = "30px";
 listEl.style.alignItems = "center";
 
-images.forEach((images) => {
-  const itemEl = document.createElement("li");
-  listEl.append(itemEl);
-  const imageEl = document.createElement("img");
-  itemEl.append(imageEl);
-  imageEl.setAttribute("src", images.url);
-  imageEl.setAttribute("alt", images.alt);
-  imageEl.setAttribute("width", 200);
-
-  // const imgEl = images.map((image) => image.url).join("");
-
-  // const imgElement = itemEl.setAttribute("url", imgEl);
-});
-
-itemEl.insertAdjacentHTML("beforeend", imgEl);
+const itemEl = images
+  .map(
+    (image) =>
+      `<li><img src="${image.url}" alt="${image.alt}" width="200"></li>`
+  )
+  .join("");
+listEl.insertAdjacentHTML("beforeend", itemEl);

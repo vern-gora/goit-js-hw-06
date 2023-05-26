@@ -30,6 +30,7 @@ createEl.addEventListener("click", () => {
 
 function destroyBoxes() {
   boxesEl.innerHTML = "";
+  size = 30;
 }
 
 destroyEl.addEventListener("click", destroyBoxes);

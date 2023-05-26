@@ -8,6 +8,13 @@ function handlerSub(event) {
   } = event.target;
   if (email.value === "" || password.value === "") {
     return alert("Всі поля повинні бути заповнені!");
+  } else {
+    const personId = {
+      email: email.value,
+      password: password.value,
+    };
+    console.log(personId);
   }
+
   event.target.reset();
 }
