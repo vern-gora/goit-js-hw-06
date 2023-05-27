@@ -8,9 +8,11 @@ const numberEl = document.querySelector('input[type="number"]');
 const createEl = document.querySelector("button[data-create]");
 const destroyEl = document.querySelector("button[data-destroy]");
 const boxesEl = document.querySelector("#boxes");
+
 let size = 30;
 
 function createBoxes(amount) {
+  let boxList = [];
   for (let i = 0; i < amount; i++) {
     const oneBox = document.createElement("div");
 
@@ -18,9 +20,10 @@ function createBoxes(amount) {
     oneBox.style.width = `${size}px`;
     oneBox.style.marginTop = "10px";
     oneBox.style.backgroundColor = getRandomHexColor();
-    boxesEl.append(oneBox);
+    boxList.push(oneBox);
     size += 10;
   }
+  boxesEl.append(...boxList);
 }
 
 createEl.addEventListener("click", () => {
